@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="container-sm mt-5">
+        <form action="/admin" method="post">
+            <div class="mb-3">
+                <label for="adminname" class="form-label">Name</label>
+                <input name="name" type="text" id="adminname" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="emailaddress" class="form-label">Email Address</label>
+                <input name="email" type="email" id="emailaddress" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input name="password" type="password" id="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-dark mt-3">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}
