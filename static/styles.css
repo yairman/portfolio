@@ -1,0 +1,13 @@
+body {
+    color: white;
+    background-color: #CD5C08;
+}
+
+.post {
+    border-radius: 25px;
+    background-color: #F08A5D;
+}
+
+.content {
+    min-height: 100px;
+}
