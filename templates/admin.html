@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="mt-5 container-fluid text-center">
+        <button class="btn btn-primary" id="new-post">New Post</button>
+    </div>
+    <div class="container-fluid" id="new-post-form" style="display: none;">
+        <form action="/newpost" method="post">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" autofocus autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <input type="text" name="content" class="form-control content" autocomplete="off">
+            </div>
+            <div class="mb-3 w-50">
+                <label for="content" class="form-label">Add photo</label>
+                <input type="file" name="file" accept="image" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Post</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("new-post").addEventListener("click", function() {
+                newPostForm = document.getElementById("new-post-form")
+                newPostBtn = document.getElementById("new-post")
+                if (newPostForm.style.display != "none") {
+                    newPostForm.style.display = "none";
+                    newPostBtn.innerHTML = 'New Post';
+                }
+                else {
+                    newPostForm.style.display = "block";
+                    newPostBtn.innerHTML = 'Close';
+                }
+            })
+        })
+    </script>
+    
+    
+    
+{% endblock %}
